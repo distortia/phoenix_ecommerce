@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello Store!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <%= render "navbar.html" %>
+      <%= if get_flash(@conn, :info) do %>
+        <article class="message is-info"><div class="message-body" role="alert"><%= get_flash(@conn, :info) %></div></article>
+      <% end %>
+      <%= if get_flash(@conn, :error) do %>
+        <article class="message is-danger"><div class="message-body" role="alert"><%= get_flash(@conn, :error) %></div></article>
+      <% end %>
+
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

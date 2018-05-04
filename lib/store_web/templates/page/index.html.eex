@@ -1,0 +1,14 @@
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Store Demo
+      </h1>
+      <h2 class="subtitle">
+        Buy some stuff!
+      </h2>
+    </div>
+  </div>
+</section>
+
+<%= render StoreWeb.ItemView, "index.html", conn: @conn, items: Store.Items.list_items() %>

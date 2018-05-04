@@ -1,0 +1,26 @@
+<h2>Listing Shopping carts</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Items</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for shopping_cart <- @shopping_carts do %>
+    <tr>
+      <td><%= shopping_cart.items %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: shopping_cart_path(@conn, :show, shopping_cart), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: shopping_cart_path(@conn, :edit, shopping_cart), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: shopping_cart_path(@conn, :delete, shopping_cart), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Shopping cart", to: shopping_cart_path(@conn, :new) %></span>

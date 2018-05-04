@@ -1,0 +1,43 @@
+<h2>Show Item</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @item.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @item.description %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @item.image %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @item.price %>
+  </li>
+
+  <li>
+    <strong>Available:</strong>
+    <%= @item.available %>
+  </li>
+
+  <li>
+    <strong>Quantity:</strong>
+    <%= @item.quantity %>
+  </li>
+
+  <li>
+    <strong>Sale price:</strong>
+    <%= @item.sale_price %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: item_path(@conn, :edit, @item) %></span>
+<span><%= link "Back", to: item_path(@conn, :index) %></span>
