@@ -293,4 +293,8 @@ defmodule Store.Accounts do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  def add_to_cart(product) do
+    :ok
+  end
 end

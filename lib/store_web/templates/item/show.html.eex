@@ -1,43 +1,49 @@
-<h2>Show Item</h2>
+<section class="section">
+  <div class="container">
+    <h1 class="title"><%= @item.name %></h1>
+    <h2 class="subtitle"><%= @item.price %></h2>
+    <ul>
+      <li>
+        <strong>Name:</strong>
+        <%= @item.name %>
+      </li>
 
-<ul>
+      <li>
+        <strong>Description:</strong>
+        <%= @item.description %>
+      </li>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @item.name %>
-  </li>
+      <li>
+        <strong>Image:</strong>
+        <%= @item.image %>
+      </li>
 
-  <li>
-    <strong>Description:</strong>
-    <%= @item.description %>
-  </li>
+      <li>
+        <strong>Price:</strong>
+        <figure class="image is-128x128">
+          <img src="<%= @item.image %>" alt="">
+        </figure>
+      </li>
 
-  <li>
-    <strong>Image:</strong>
-    <%= @item.image %>
-  </li>
+      <li>
+        <strong>Available:</strong>
+        <%= @item.available %>
+      </li>
 
-  <li>
-    <strong>Price:</strong>
-    <%= @item.price %>
-  </li>
+      <li>
+        <strong>Quantity:</strong>
+        <%= @item.quantity %>
+      </li>
 
-  <li>
-    <strong>Available:</strong>
-    <%= @item.available %>
-  </li>
+      <li>
+        <strong>Sale price:</strong>
+        <%= @item.sale_price %>
+      </li>
 
-  <li>
-    <strong>Quantity:</strong>
-    <%= @item.quantity %>
-  </li>
+    </ul>
 
-  <li>
-    <strong>Sale price:</strong>
-    <%= @item.sale_price %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: item_path(@conn, :edit, @item) %></span>
-<span><%= link "Back", to: item_path(@conn, :index) %></span>
+  
+    <span><%= link "Edit", to: item_path(@conn, :edit, @item) %></span>
+    <span><%= link "Back", to: item_path(@conn, :index) %></span>
+  </div>
+</section>

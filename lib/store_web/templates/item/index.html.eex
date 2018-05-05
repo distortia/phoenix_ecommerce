@@ -18,18 +18,11 @@
             </div>
             <nav class="level is-mobile">
               <div class="level-left">
-                <a class="level-item" aria-label="reply">
-                  <%= item.price %>
+                <a class="level-item" aria-label="buy">
+                  <%= link "Buy", to: shopping_cart_path(@conn, :add, %{"id" => item.id}) %>
                 </a>
-                <a class="level-item" aria-label="retweet">
-                  <span class="icon is-small">
-                    <i class="fas fa-retweet" aria-hidden="true"></i>
-                  </span>
-                </a>
-                <a class="level-item" aria-label="like">
-                  <span class="icon is-small">
-                    <i class="fas fa-heart" aria-hidden="true"></i>
-                  </span>
+                <a class="level-item" aria-label="view">
+                  <%= link "View Item", to: item_path(@conn, :show, item.id), class: "button is-info" %>
                 </a>
               </div>
             </nav>

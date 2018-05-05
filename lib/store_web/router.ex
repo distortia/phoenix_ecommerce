@@ -21,6 +21,7 @@ defmodule StoreWeb.Router do
     resources "/items", ItemController
     resources "/orders", OrderController
     resources "/shopping_cart", ShoppingCartController
+    get "/shopping_cart/add", ShoppingCartController, :add
   end
 
   # Other scopes may use custom stacks.

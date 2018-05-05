@@ -1,5 +1,10 @@
-<h2>New Item</h2>
+<section class="section">
+  <div class="container">
+    <h1 class="title">New Item</h1>
+    <h2 class="subtitle">Add a new item below</h2>
 
-<%= render "form.html", Map.put(assigns, :action, item_path(@conn, :create)) %>
+    <%= render "form.html", Map.put(assigns, :action, item_path(@conn, :create)) %>
 
-<span><%= link "Back", to: item_path(@conn, :index) %></span>
+    <span><%= link "Back", to: item_path(@conn, :index) %></span>
+  </div>
+</section>

@@ -3,6 +3,7 @@ defmodule StoreWeb.ShoppingCartController do
 
   alias Store.Accounts
   alias Store.Accounts.ShoppingCart
+  alias Store.Items
 
   def index(conn, _params) do
     shopping_carts = Accounts.list_shopping_carts()
@@ -56,5 +57,14 @@ defmodule StoreWeb.ShoppingCartController do
     conn
     |> put_flash(:info, "Shopping cart deleted successfully.")
     |> redirect(to: shopping_cart_path(conn, :index))
+  end
+
+  def add(conn, %{"id" => id}) do
+    product = Items.get_item!(id)
+    Accounts.add_to_cart(product)
+
+    conn
+    |> put_flash(:info, "Added to shopping cart!")
+    |> redirect(to: page_path(conn, :index, items: Items.list_items()))
   end
 end
